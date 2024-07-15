@@ -1,3 +1,20 @@
 create-react-app crm
 cd crm
 npm start
+npm install axios react-router-dom @mui/material @emotion/react @emotion/styled
+
+
+
+mkdir crm-api
+cd crm-api
+npm init -y
+
+npm install express mongoose
+npm install sequelize mysql2
+
+CREATE DATABASE crm;
+CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON crm.* TO 'username'@'localhost';
+FLUSH PRIVILEGES;
+
+npm install cors
