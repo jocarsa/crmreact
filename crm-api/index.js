@@ -58,8 +58,12 @@ app.get('/customers/:id', async (req, res) => {
 
 // Create a new customer
 app.post('/customers', async (req, res) => {
-  const newCustomer = await Customer.create(req.body);
-  res.json(newCustomer);
+  try {
+    const newCustomer = await Customer.create(req.body);
+    res.json(newCustomer);
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
 });
 
 // Update a customer
